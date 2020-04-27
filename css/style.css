@@ -1,6 +1,20 @@
 .content{
-	color: red;	
+	color: red;
+	font-family: Impact, Charcoal, sans-serif;
 }
+
+.content img{
+	border-radius: 25px;
+	vertical-align: middle;
+	
+}
+
+.photo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
 header{
 	text-align: center;
 	font-size: 40px;
