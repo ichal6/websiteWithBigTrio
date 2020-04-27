@@ -31,3 +31,7 @@ footer{
 	border-width: 1px;
 	background-color: #33cc33;
 }
+
+input{
+	margin-top: 10px;	
+}
