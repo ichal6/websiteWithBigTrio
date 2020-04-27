@@ -14,10 +14,13 @@
 	vertical-align: middle;
 }
 
-
 header{
+	background-color: yellow;
+	display:flex;
+    flex-direction: row;
 	text-align: center;
 	font-size: 40px;
+	justify-content: space-around;
 }
 
 footer{
