@@ -32,6 +32,11 @@ footer{
 	background-color: #33cc33;
 }
 
-input{
+form{
+	text-align: center;
 	margin-top: 10px;	
+}
+
+input[type=text], textarea{
+	width: 350px;
 }
