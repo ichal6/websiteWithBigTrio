@@ -11,7 +11,8 @@ function checkName(){
 	var submitOK = true;
 	var name = document.getElementById("name").value;
 	
-	var patt = new RegExp("([A-Z])\\w+");
+	var patt = new RegExp("([A-Z][A-Z]*)");
+		//"([A-Z])\\w+");
   	var res = patt.test(name);
 	console.log(res);
 	if(!res){
