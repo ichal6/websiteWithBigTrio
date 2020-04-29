@@ -10,13 +10,16 @@ function switchButton(status){
 function checkName(){
 	var submitOK = true;
 	var name = document.getElementById("name").value;
+	const maxLength = 20;
+	
+	if(name.length > maxLength){
+		return false;
+	}
 	
 	var patt = new RegExp("([A-Z][A-Z]*)");
-		//"([A-Z])\\w+");
   	var res = patt.test(name);
 	console.log(res);
 	if(!res){
-		switchButton(res);
 		return false;
 	}
 	return true;
@@ -26,8 +29,9 @@ function checkData() {
   var email = document.getElementById("email").value.indexOf("@");
   var message = document.getElementById("message").value;
   
-  var submitOK = true;
-	if(!checkName()){
+  var submitOK = checkName();
+	if(!submitOK){
+		switchButton(submitOK);
 		return;	
 	}
 	
