@@ -7,20 +7,30 @@ function switchButton(status){
   }
 }
 
-function checkData() {
-  var email = document.getElementById("email").value.indexOf("@");
-  var message = document.getElementById("message").value;
-  var name = document.getElementById("name").value;
-  submitOK = true;
-
-  var patt = new RegExp("([A-Z])\\w+");
-  var res = patt.test(name);
+function checkName(){
+	var submitOK = true;
+	var name = document.getElementById("name").value;
+	
+	var patt = new RegExp("([A-Z])\\w+");
+  	var res = patt.test(name);
 	console.log(res);
 	if(!res){
 		switchButton(res);
-		return;
+		return false;
 	}
+	return true;
+}
+
+function checkData() {
+  var email = document.getElementById("email").value.indexOf("@");
+  var message = document.getElementById("message").value;
   
+  var submitOK = true;
+	if(!checkName()){
+		return;	
+	}
+	
+	
   if (message.length < 1 ) {
     console.log("The message is empty");
 	console.log(message);
