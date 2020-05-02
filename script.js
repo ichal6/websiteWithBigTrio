@@ -43,30 +43,37 @@ function checkEmail(){
 	return true;	
 }
 
+function checkMessage(){
+	var message = document.getElementById("message").value;
+	
+	if (message.length < 1 ) {
+		console.log("The message is empty");
+		console.log(message);
+		return false;
+  	}
+	return true;
+}
+
 function checkData() {
-  
-  var message = document.getElementById("message").value;
-  
-  var submitOK = checkName();
+	var submitOK = checkName();
 	if(!submitOK){
 		switchButton(submitOK);
 		return;	
 	}
-	
-	
-  if (message.length < 1 ) {
-    console.log("The message is empty");
-	console.log(message);
-    submitOK = false;
-  }
 	
 	submitOK = checkEmail();
 	if(!submitOK){
 		switchButton(submitOK);
 		return;	
 	}
+	
+	submitOK = checkMessage();
+	if(!submitOK){
+		switchButton(submitOK);
+		return;	
+	}
 
-  switchButton(submitOK);
+    switchButton(submitOK);
 	console.log(submitOK);
 }
 
