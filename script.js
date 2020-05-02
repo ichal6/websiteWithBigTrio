@@ -25,8 +25,18 @@ function checkName(){
 	return true;
 }
 
+function checkEmail(){
+	var email = document.getElementById("email").value.indexOf("@");
+	
+	if (email == -1) {
+    	console.log("Not a valid e-mail!");
+    	return false;
+  	}
+	return true;	
+}
+
 function checkData() {
-  var email = document.getElementById("email").value.indexOf("@");
+  
   var message = document.getElementById("message").value;
   
   var submitOK = checkName();
@@ -41,11 +51,12 @@ function checkData() {
 	console.log(message);
     submitOK = false;
   }
-
-  if (email == -1) {
-    console.log("Not a valid e-mail!");
-    submitOK = false;
-  }
+	
+	submitOK = checkEmail();
+	if(!submitOK){
+		switchButton(submitOK);
+		return;	
+	}
 
   switchButton(submitOK);
 	console.log(submitOK);
