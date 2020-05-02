@@ -26,12 +26,20 @@ function checkName(){
 }
 
 function checkEmail(){
-	var email = document.getElementById("email").value.indexOf("@");
+	var email = document.getElementById("email").value;
 	
-	if (email == -1) {
+	if (email.indexOf("@") == -1) {
     	console.log("Not a valid e-mail!");
     	return false;
   	}
+	
+	var patt = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+  	var res = patt.test(email);
+	console.log(res);
+	if(!res){
+		return false;
+	}
+	
 	return true;	
 }
 
