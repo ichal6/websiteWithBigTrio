@@ -55,26 +55,12 @@ function checkMessage(){
 }
 
 function checkData() {
-	var submitOK = checkName();
-	if(!submitOK){
-		switchButton(submitOK);
-		return;	
-	}
-	
-	submitOK = checkEmail();
-	if(!submitOK){
-		switchButton(submitOK);
-		return;	
-	}
-	
-	submitOK = checkMessage();
-	if(!submitOK){
-		switchButton(submitOK);
+	if(!checkName() || !checkEmail() || !checkMessage() ){
+		switchButton(false);
 		return;	
 	}
 
-    switchButton(submitOK);
-	console.log(submitOK);
+    switchButton(true);
 }
 
 function displayMessage(){
